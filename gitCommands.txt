@@ -1,0 +1,52 @@
+got to github.com
+login to account
+new repository
+create repository
+-----------------------
+cd
+ls
+cd Documents/GitHub
+ls
+cd Tutorial_2_
+git --help
+git init 
+git lfs track "my_folder/**" or git add .gitattrubutes
+git add .gitignore
+git add .
+git commit -m"..."
+git branch -M main
+git remote add origin https://github.com/MichaelSodeke/Tutorial_2_.git
+git remote -v
+git remote rm (...)
+git push -u origin main
+
+[ for git hub pages ]
+	|| create new branch WITH NO parent branch
+git checkout --orphan gh-pages
+	|| only 'main' branch shows because commits for 'new' branch have not been pushed
+git branch -a
+	|| check the status of new branch
+git status
+	|| remove all unwanted files from repository (.git) WITHOUT deleting those them on your local file system (computer)
+git rm -rf --cached .
+	|| make an empty commit
+git commit --allow-empty -m"Initial commit"
+	|| push commit to new branch
+git push -u origin gh-pages
+git mv _book/* ./ -k
+git rm _book
+
+git status
+git log or git shortlog
+git lfs ls-files
+-----------------------
+
+git add --force <specific file>
+git branch -D or -d (...)
+git rm -r --cached <filename> | do not delete from local file system
+git ls-tree -r <branch>
+git checkout main
+git push -f origin d1077b044c0 c12003e63f3e89 013dcdb3cb32a5b:main
+git push origin +main
+
+https://docs.github.com/en/free-pro-team@latest/github/using-git/ignoring-files

@@ -1,0 +1,37 @@
+--- 
+title: "Plots Project"
+author: "Michael Sodeke"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+fontsize: 9pt
+fontfamily: Segoe UI
+output: bookdown::gitbook
+---
+
+# A Basic Plot
+
+There are many ways to creeate interactive plots. One way is to use the `plotly` package in R.
+Interactive plots are essential in the field of Data Analysis.
+
+The `plotly`, `caret`, and `dplyr` package can be installed from CRAN or Github:
+
+```{r eval=FALSE}
+install.packages("plotly")
+install.packages("caret")
+install.packages("dplyr")
+```
+Now load these packages in the R terminal
+
+```{r }
+suppressMessages( require(plotly) )
+suppressMessages( require(caret) )
+suppressMessages( require(dplyr) )
+```
+In order to create an interactive plot, do the following:
+```{r }
+df <- mtcars
+df2 <- df %>% as.data.frame()
+df2$mpg <- df2$mpg - mean(df2$mpg)
+plt <- plot_ly(data=df2,x=~wt,y=~mpg,type='scatter',mode='markers')
+plt
+```
